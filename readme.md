@@ -1,26 +1,25 @@
 
-##Automatic tuning hyperparameters is a dream.
+##Automatically tuning hyperparameters is a dream.
 
 ##Why ?
-Hyperparameter is controling how the learning algorithm to learn. so it's directly effect the performence.
-With a well tuned hyperparameters, a simple module will be very robust, check paper
-"Bayesian Optimization of Text Representations". And on the experience, the learning alogrithm is so sensitive
-to learning rate and regularization.
+Hyperparameter is controling how to learn the optimization algorithm. So it could directly effect the convergence performence as well as model precision.
+Given well tuned hyperparameters, even a simple model could be robust enough. Check the publication of
+"Bayesian Optimization of Text Representations". According to experiences, the optimization alogrithm is very sensitive
+to learning rate and regularization parameters.
 
-##Idea,
-First, I treat this problem as two different sapce, one is the parameter, another is the hyper parameter. Learning
-can be consided as pick one point in the HPS(hyper parameters space), to get a training result in the paramter space.
-How to mapping the two different space, and pick a optimize point in HPS val parameter space performence? research found
-reverse-mode differentiation was pro-posed by Bengio(2000)"Gradient-based optimization of hyperpa-parameters" can
-solve this issue.But there is a big problem with RMD, it will comsume thousands of times memory to storage the reverse path.
-To solve this problem paper "Gradient-based Hyperparameter Optimization through Reversible Learning", rely on moment can reduce hunderd times
-memory compare to origin RMD. Jie Fu's paper "DrMAD: Distilling Reverse-Mode Automatic Differentiation for Optimizing
-Hyperparameters of Deep Neural Networks" throw all training trajectory, with zero memory comsume.
+##Idea
+Firstly, I deal with this problem from two individual spaces, one is the parameter, the other is the hyper-parameter. Learning
+could be consided as picking one point from the HPS(hyper parameters space) and then getting training result from the paramter space.
+How to map the two different spaces and pick an optimized point from HPS via the performance of parameter space? Researchers have found that
+reverse-mode differentiation proposed by Bengio(2000) in his paper "Gradient-based optimization of hyperpa-parameters" could
+resolve this issue. But there exists a big problem with RMD, it will consume thousands of times of memory to store the reverse path.
+To solve this problem the paper "Gradient-based Hyperparameter Optimization through Reversible Learning", which relies on momentum could reduce hunderds of times
+of memory compared with the origin RMD. Jie Fu's paper "DrMAD: Distilling Reverse-Mode Automatic Differentiation for Optimizing
+Hyperparameters of Deep Neural Networks" discards all training trajectories with zero memory consumption.
 
 
-##current implement
-mix augograd and mxnet to implement DrMAD, tested on small data set mnist.
+##Current implemention
+Mixing [autograd](https://github.com/HIPS/autograd) and mxnet to implement DrMAD, having been tested on a small data set mnist.
 
-##note
-this project is a experiment project to find a solution to automatic tuning hyperparameters.
-
+##Note
+This project is an experiment to find a solution to automatically tune hyperparameters.
