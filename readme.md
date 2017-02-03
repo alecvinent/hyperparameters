@@ -23,3 +23,9 @@ Mixing [autograd](https://github.com/HIPS/autograd) and mxnet to implement DrMAD
 
 ##Note
 This project is an experiment to find a solution to automatically tune hyperparameters.
+
+##How to run it?
+1, clone deepinsight's mxnet, then check to branch "hypergrad". Install it.
+2, run ```python setup.py``` in ```hyperparameters/mxnet_autograd```.
+3, run ```python train_mnist.py``` in ```hyperparameters/mxnet_autograd/image-classification```.
+
